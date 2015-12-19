@@ -2,6 +2,32 @@ var difficulty = 1;
 var size = 5;
 var board = [];
 
+function boardSizeChange(input){
+	if(input == "small"){
+		size = 3;
+	}
+	else if(input == "large"){
+		size = 8;
+	}
+	else{
+		size = 5;
+	}
+	generator(size, difficulty);
+}
+
+function boardDifficultyChange(input){
+	if(input == "easy"){
+		difficulty = .01;
+	}
+	else if(input == "hard"){
+		difficulty = 3;
+	}
+	else{
+		difficulty = 1;
+	}
+	generator(size, difficulty);
+}
+
 function flag(){
 	var target = (event.currentTarget.id);
 	if(document.getElementById(target).style.backgroundColor == "red"){
@@ -118,9 +144,20 @@ function populate(input){
 	}
 }
 
+function boardSize(input){
+	var target = document.getElementById("board");
+	var theSize;
+	theSize = (input+1) * 42;
+	target.style.width = theSize + "px";
+}
+
 function generator(size, difficulty){
+	var target = document.getElementById("board");
+	board = [];
+	target.innerHTML = "";
 	boardGen(size);
 	minePlacement(difficulty, size);
 	populate(size);
+	boardSize(size);
 }
-generator(3,1);
+generator(size,difficulty);
