@@ -41,6 +41,9 @@ function flag(){
 	return false;
 }
 
+function reset(){
+	generator(size, difficulty);
+}
 function mineFunction(){
 	var target = (event.currentTarget.id);
 	document.getElementById(target).style.backgroundColor = "black";
@@ -50,6 +53,7 @@ function mineFunction(){
 function blockFunction(){
 	var target = (event.currentTarget.id);
 	document.getElementById(target).style.color = "black";
+	document.getElementById(target).style.backgroundColor = "white";
 }
 
 function shuffle(array) {

@@ -4,15 +4,21 @@
 		<link href="style/main.css" type"style/css" rel="stylesheet"></link>
 	</head>
 	<body>
-		Beginnings of minesweeper
-			Size
+		<h3>Minesweeper</h3>
+		<h4>Size</h4>
+		<div id="size">
 			<button onclick="boardSizeChange('small')">Small</button>
 			<button onclick="boardSizeChange('medium')">Medium</button>
 			<button onclick="boardSizeChange('large')">Large</button>
-			Difficulty
+		</div>
+		<h4>Difficulty</h4>
+		<div id="difficulty">
 			<button onclick="boardDifficultyChange('easy')">Easy</button>
 			<button onclick="boardDifficultyChange('medium')">Medium</button>
 			<button onclick="boardDifficultyChange('hard')">Hard</button>
+		</div>
+		<div id="reset">
+			<button onclick="reset()">Reset</button>
 		</div>
 		<div id="board">
 		</div>
